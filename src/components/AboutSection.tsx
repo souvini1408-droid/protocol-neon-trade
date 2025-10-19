@@ -1,4 +1,4 @@
-import ebookCover from "@/assets/ebook-cover.png";
+import ebookCover from "@/assets/ebook-cover-real.jpeg";
 import { CheckCircle2 } from "lucide-react";
 
 export const AboutSection = () => {
@@ -16,7 +16,7 @@ export const AboutSection = () => {
           <div className="flex-1 animate-fade-in">
             <img
               src={ebookCover}
-              alt="O Protocolo dos Gráficos"
+              alt="O Protocolo do Gráfico"
               className="w-full max-w-sm mx-auto drop-shadow-2xl"
             />
           </div>
@@ -28,7 +28,7 @@ export const AboutSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">O Protocolo dos Gráficos</strong> não é apenas mais um manual de análise técnica. 
+              <strong className="text-foreground">O Protocolo do Gráfico</strong> não é apenas mais um manual de análise técnica.
               É um guia completo que une <span className="text-neon">estratégia gráfica</span> com <span className="text-neon">mentalidade vencedora</span>.
             </p>
             

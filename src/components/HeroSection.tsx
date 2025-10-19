@@ -1,4 +1,4 @@
-import ebookCover from "@/assets/ebook-cover.png";
+import ebookCover from "@/assets/ebook-cover-real.jpeg";
 import { CTAButton } from "./CTAButton";
 
 export const HeroSection = () => {
@@ -21,9 +21,9 @@ export const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="text-foreground">O Protocolo dos</span>
+              <span className="text-foreground">O Protocolo do</span>
               <br />
-              <span className="text-neon">Gráficos</span>
+              <span className="text-neon">Gráfico</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
@@ -42,7 +42,7 @@ export const HeroSection = () => {
               <div className="absolute inset-0 bg-neon/30 blur-3xl rounded-full" />
               <img
                 src={ebookCover}
-                alt="O Protocolo dos Gráficos - Mente do Trade"
+                alt="O Protocolo do Gráfico - Mente do Trade"
                 className="relative w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>

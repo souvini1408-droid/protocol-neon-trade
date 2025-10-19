@@ -4,7 +4,7 @@ export const Footer = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-4">
           <p className="text-muted-foreground">
-            © 2025 O Protocolo dos Gráficos. Todos os direitos reservados.
+            © 2025 O Protocolo do Gráfico. Todos os direitos reservados.
           </p>
           <p className="text-sm text-muted-foreground">
             Este produto não garante resultados financeiros. Trading envolve riscos.

@@ -10,8 +10,8 @@ export const Header = () => {
               <TrendingUp className="h-6 w-6 text-background" />
             </div>
             <span className="text-xl font-bold">
-              <span className="text-foreground">Protocolo dos</span>{" "}
-              <span className="text-neon">Gráficos</span>
+              <span className="text-foreground">Protocolo do</span>{" "}
+              <span className="text-neon">Gráfico</span>
             </span>
           </div>
         </div>

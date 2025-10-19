@@ -42,7 +42,7 @@ export const HeroSection = () => {
               <div className="absolute inset-0 bg-neon/30 blur-3xl rounded-full" />
               <img
                 src={ebookCover}
-                alt="O Protocolo do Gráfico - Mente do Trade"
+                alt="O Protocolo do Gráfico - Mente do Trader"
                 className="relative w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>

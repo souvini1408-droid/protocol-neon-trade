@@ -31,7 +31,7 @@ export const FloatingCTA = () => {
       )}
     >
       <CTAButton onClick={scrollToPrice} className="shadow-2xl">
-        📥 COMPRAR AGORA
+        📥 R$ 115,99
       </CTAButton>
     </div>
   );

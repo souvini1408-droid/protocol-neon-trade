@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { CTAButton } from "./CTAButton";
+import { CountdownTimer } from "./CountdownTimer";
 
 export const PriceSection = () => {
   const includes = [
@@ -18,7 +19,10 @@ export const PriceSection = () => {
   return (
     <section id="preco" className="py-20 px-4 bg-gradient-to-b from-background to-neon-dark/10">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in space-y-6">
+          <div className="flex justify-center">
+            <CountdownTimer />
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">Transforme Seu</span>{" "}
             <span className="text-neon">Trading Hoje</span>
@@ -31,10 +35,16 @@ export const PriceSection = () => {
         <div className="bg-card border-2 border-neon/50 rounded-2xl p-8 md:p-12 shadow-glow-strong animate-scale-in">
           <div className="text-center mb-8">
             <div className="mb-4">
-              <span className="text-muted-foreground line-through text-2xl">R$ 97,00</span>
+              <span className="text-muted-foreground line-through text-3xl md:text-4xl">De R$ 299,00</span>
             </div>
-            <div className="text-6xl md:text-7xl font-bold text-neon mb-2">
-              R$ 39,90
+            <div className="mb-2">
+              <span className="text-2xl text-muted-foreground">Por apenas</span>
+            </div>
+            <div className="text-6xl md:text-8xl font-bold text-neon mb-2">
+              R$ 115,99
+            </div>
+            <div className="inline-block bg-destructive/20 text-destructive px-4 py-2 rounded-full font-bold text-lg mb-4">
+              61% DE DESCONTO
             </div>
             <p className="text-lg text-muted-foreground">
               Pagamento único • Acesso vitalício
@@ -53,7 +63,7 @@ export const PriceSection = () => {
           </div>
           
           <CTAButton onClick={handlePurchase} className="w-full text-xl py-8">
-            📥 COMPRAR AGORA – R$ 39,90
+            📥 GARANTIR DESCONTO – R$ 115,99
           </CTAButton>
           
           <p className="text-center text-sm text-muted-foreground mt-6">

@@ -33,7 +33,7 @@ export const HeroSection = () => {
             
             <div className="pt-4">
               <CTAButton onClick={scrollToPrice} className="w-full sm:w-auto">
-                📥 COMPRAR AGORA – R$ 39,90
+                📥 COMPRAR AGORA – R$ 115,99
               </CTAButton>
             </div>
           </div>

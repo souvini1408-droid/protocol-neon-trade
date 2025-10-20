@@ -1,5 +1,6 @@
-import ebookCover from "@/assets/ebook-cover-transparent.png";
+import ebookCover from "@/assets/ebook-cover-3d.jpg";
 import { CheckCircle2 } from "lucide-react";
+import { Interactive3DBook } from "./Interactive3DBook";
 
 export const AboutSection = () => {
   const benefits = [
@@ -14,12 +15,11 @@ export const AboutSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 animate-fade-in">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-neon/10 blur-2xl rounded-full" />
-              <img
+            <div className="w-full max-w-sm mx-auto">
+              <Interactive3DBook
                 src={ebookCover}
                 alt="O Protocolo do Gráfico"
-                className="w-full max-w-sm mx-auto drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 cursor-pointer"
+                className="w-full"
               />
             </div>
           </div>

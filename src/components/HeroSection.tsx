@@ -1,5 +1,6 @@
-import ebookCover from "@/assets/ebook-cover-transparent.png";
+import ebookCover from "@/assets/ebook-cover-3d.jpg";
 import { CTAButton } from "./CTAButton";
+import { Interactive3DBook } from "./Interactive3DBook";
 
 export const HeroSection = () => {
   const scrollToPrice = () => {
@@ -38,12 +39,11 @@ export const HeroSection = () => {
           </div>
           
           <div className="flex-1 flex justify-center animate-scale-in">
-            <div className="relative group perspective-1000">
-              <div className="absolute inset-0 bg-neon/20 blur-3xl rounded-full animate-pulse" />
-              <img
+            <div className="relative w-full max-w-md">
+              <Interactive3DBook
                 src={ebookCover}
                 alt="O Protocolo do Gráfico - Mente do Trader"
-                className="relative w-full max-w-md drop-shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:rotate-2 group-hover:drop-shadow-[0_0_50px_rgba(132,204,22,0.6)] cursor-pointer"
+                className="w-full cursor-pointer"
               />
             </div>
           </div>

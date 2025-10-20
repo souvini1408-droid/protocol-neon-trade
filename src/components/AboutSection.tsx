@@ -10,7 +10,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="sobre" className="py-20 px-4 bg-secondary/50">
+    <section id="sobre" className="py-20 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 animate-fade-in">

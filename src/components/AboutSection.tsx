@@ -1,4 +1,4 @@
-import ebookCover from "@/assets/ebook-cover-real.jpeg";
+import ebookCover from "@/assets/ebook-cover-transparent.png";
 import { CheckCircle2 } from "lucide-react";
 
 export const AboutSection = () => {
@@ -14,11 +14,14 @@ export const AboutSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 animate-fade-in">
-            <img
-              src={ebookCover}
-              alt="O Protocolo do Gráfico"
-              className="w-full max-w-sm mx-auto drop-shadow-2xl"
-            />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-neon/10 blur-2xl rounded-full" />
+              <img
+                src={ebookCover}
+                alt="O Protocolo do Gráfico"
+                className="w-full max-w-sm mx-auto drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 cursor-pointer"
+              />
+            </div>
           </div>
           
           <div className="flex-1 space-y-6 animate-fade-in">

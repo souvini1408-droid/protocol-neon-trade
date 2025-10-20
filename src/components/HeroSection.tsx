@@ -1,4 +1,4 @@
-import ebookCover from "@/assets/ebook-cover-real.jpeg";
+import ebookCover from "@/assets/ebook-cover-transparent.png";
 import { CTAButton } from "./CTAButton";
 
 export const HeroSection = () => {
@@ -38,12 +38,12 @@ export const HeroSection = () => {
           </div>
           
           <div className="flex-1 flex justify-center animate-scale-in">
-            <div className="relative">
-              <div className="absolute inset-0 bg-neon/30 blur-3xl rounded-full" />
+            <div className="relative group perspective-1000">
+              <div className="absolute inset-0 bg-neon/20 blur-3xl rounded-full animate-pulse" />
               <img
                 src={ebookCover}
                 alt="O Protocolo do Gráfico - Mente do Trader"
-                className="relative w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                className="relative w-full max-w-md drop-shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:rotate-2 group-hover:drop-shadow-[0_0_50px_rgba(132,204,22,0.6)] cursor-pointer"
               />
             </div>
           </div>

@@ -34,7 +34,7 @@ export const InteractiveBackground = () => {
     window.addEventListener("resize", resizeCanvas);
 
     // Initialize candlesticks
-    const numCandlesticks = 35;
+    const numCandlesticks = 60;
     candlesticksRef.current = Array.from({ length: numCandlesticks }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -86,19 +86,35 @@ export const InteractiveBackground = () => {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      candlesticksRef.current.forEach((candle) => {
+      candlesticksRef.current.forEach((candle, index) => {
         // Calculate distance from mouse
         const dx = mouseRef.current.x - candle.x;
         const dy = mouseRef.current.y - candle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const minDistance = 150;
 
-        // Apply repulsion force
+        // Apply repulsion force from mouse
         if (distance < minDistance) {
           const force = (minDistance - distance) / minDistance;
           candle.vx -= (dx / distance) * force * 2;
           candle.vy -= (dy / distance) * force * 2;
         }
+
+        // Apply repulsion force between candlesticks
+        candlesticksRef.current.forEach((otherCandle, otherIndex) => {
+          if (index !== otherIndex) {
+            const cdx = otherCandle.x - candle.x;
+            const cdy = otherCandle.y - candle.y;
+            const cDistance = Math.sqrt(cdx * cdx + cdy * cdy);
+            const minCandleDistance = 80;
+
+            if (cDistance < minCandleDistance && cDistance > 0) {
+              const force = (minCandleDistance - cDistance) / minCandleDistance;
+              candle.vx -= (cdx / cDistance) * force * 0.5;
+              candle.vy -= (cdy / cDistance) * force * 0.5;
+            }
+          }
+        });
 
         // Apply friction
         candle.vx *= 0.95;

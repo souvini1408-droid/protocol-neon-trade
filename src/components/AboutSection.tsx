@@ -14,13 +14,17 @@ export const AboutSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 animate-fade-in">
             <div className="w-full max-w-sm mx-auto aspect-[9/16] rounded-2xl overflow-hidden shadow-glow-strong">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/wxQQfGLmvoI"
-                title="O Protocolo do Gráfico"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+              >
+                <source src="/videos/protocolo-grafico.mp4" type="video/mp4" />
+                Seu navegador não suporta a reprodução de vídeos.
+              </video>
             </div>
           </div>
           

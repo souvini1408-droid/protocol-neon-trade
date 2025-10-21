@@ -34,7 +34,7 @@ export const InteractiveBackground = () => {
     window.addEventListener("resize", resizeCanvas);
 
     // Initialize candlesticks
-    const numCandlesticks = 12;
+    const numCandlesticks = 20;
     candlesticksRef.current = Array.from({ length: numCandlesticks }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -61,7 +61,7 @@ export const InteractiveBackground = () => {
       const bodyHeight = Math.abs(candle.close - candle.open);
       const isGreen = candle.close > candle.open;
 
-      ctx.globalAlpha = 0.15;
+      ctx.globalAlpha = 0.25;
 
       // Draw wick (high to low)
       ctx.strokeStyle = isGreen ? "#ffffff" : "#000000";
@@ -138,8 +138,8 @@ export const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ mixBlendMode: "multiply" }}
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: 1 }}
     />
   );
 };

@@ -14,9 +14,10 @@ const Index = () => {
   return (
     <div className="min-h-screen relative">
       <InteractiveBackground />
-      <Header />
-      <FloatingCTA />
-      <main className="pt-16">
+      <div className="relative z-10">
+        <Header />
+        <FloatingCTA />
+        <main className="pt-16">
         <HeroSection />
         <AboutSection />
         <LearnSection />
@@ -24,8 +25,9 @@ const Index = () => {
         <PriceSection />
         <GuaranteeSection />
         <LeadCaptureSection />
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };

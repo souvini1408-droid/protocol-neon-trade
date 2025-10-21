@@ -10,7 +10,6 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-black" />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">

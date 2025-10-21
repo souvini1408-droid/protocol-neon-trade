@@ -34,7 +34,7 @@ export const InteractiveBackground = () => {
     window.addEventListener("resize", resizeCanvas);
 
     // Initialize candlesticks
-    const numCandlesticks = 20;
+    const numCandlesticks = 35;
     candlesticksRef.current = Array.from({ length: numCandlesticks }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -138,8 +138,8 @@ export const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      className="fixed top-0 left-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 5, minHeight: '100vh' }}
     />
   );
 };

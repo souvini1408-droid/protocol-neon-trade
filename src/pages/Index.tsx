@@ -8,10 +8,12 @@ import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { LeadCaptureSection } from "@/components/LeadCaptureSection";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { InteractiveBackground } from "@/components/InteractiveBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <InteractiveBackground />
       <Header />
       <FloatingCTA />
       <main className="pt-16">

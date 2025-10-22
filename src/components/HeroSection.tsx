@@ -3,9 +3,8 @@ import { CTAButton } from "./CTAButton";
 import { Interactive3DBook } from "./Interactive3DBook";
 
 export const HeroSection = () => {
-  const scrollToPrice = () => {
-    const priceSection = document.getElementById("preco");
-    priceSection?.scrollIntoView({ behavior: "smooth" });
+  const handlePurchase = () => {
+    window.open("https://pay.hotmart.com/X102550943O", "_blank");
   };
 
   return (
@@ -32,7 +31,7 @@ export const HeroSection = () => {
             </p>
             
             <div className="pt-4">
-              <CTAButton onClick={scrollToPrice} className="w-full sm:w-auto">
+              <CTAButton onClick={handlePurchase} className="w-full sm:w-auto">
                 📥 COMPRAR AGORA – R$ 115,99
               </CTAButton>
             </div>

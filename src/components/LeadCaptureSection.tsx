@@ -20,12 +20,13 @@ export const LeadCaptureSection = () => {
       return;
     }
     
-    // Aqui você integraria com seu serviço de email marketing
-    console.log("Lead captured:", { name, email });
+    // Envia email para protocolomente@gmail.com
+    const mailtoLink = `mailto:protocolomente@gmail.com?subject=Solicitação de Capítulo Gratuito&body=Nome: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0ASolicito o envio de 1 capítulo gratuito do ebook.`;
+    window.location.href = mailtoLink;
     
     toast({
-      title: "Sucesso!",
-      description: "Verifique seu email para baixar o trecho gratuito"
+      title: "Solicitação enviada!",
+      description: "Seu cliente de email foi aberto para enviar a solicitação"
     });
     
     setName("");

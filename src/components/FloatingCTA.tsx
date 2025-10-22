@@ -18,9 +18,8 @@ export const FloatingCTA = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollToPrice = () => {
-    const priceSection = document.getElementById("preco");
-    priceSection?.scrollIntoView({ behavior: "smooth" });
+  const handlePurchase = () => {
+    window.open("https://pay.hotmart.com/X102550943O", "_blank");
   };
 
   return (
@@ -30,7 +29,7 @@ export const FloatingCTA = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10 pointer-events-none"
       )}
     >
-      <CTAButton onClick={scrollToPrice} className="shadow-2xl">
+      <CTAButton onClick={handlePurchase} className="shadow-2xl">
         📥 R$ 115,99
       </CTAButton>
     </div>

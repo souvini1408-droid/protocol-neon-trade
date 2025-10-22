@@ -12,8 +12,7 @@ export const PriceSection = () => {
   ];
 
   const handlePurchase = () => {
-    // Aqui você integraria com seu sistema de pagamento
-    window.open("https://seu-link-de-pagamento.com", "_blank");
+    window.open("https://pay.hotmart.com/X102550943O", "_blank");
   };
 
   return (

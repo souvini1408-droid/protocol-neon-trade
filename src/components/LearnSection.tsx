@@ -27,12 +27,12 @@ export const LearnSection = () => {
   return (
     <section id="aprender" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-12 lg:mb-16 animate-fade-in px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             <span className="text-foreground">O que você vai</span>{" "}
             <span className="text-neon">Aprender</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
             Conteúdo prático e direto ao ponto para transformar sua operação
           </p>
         </div>
@@ -41,14 +41,14 @@ export const LearnSection = () => {
           {topics.map((topic, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-lg p-8 hover:border-neon/50 transition-all duration-300 hover:shadow-glow animate-fade-in group"
+              className="bg-card border border-border rounded-lg p-6 sm:p-7 md:p-8 hover:border-neon/50 transition-all duration-300 hover:shadow-glow animate-fade-in group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <topic.icon className="h-12 w-12 text-neon mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-neon transition-colors">
+              <topic.icon className="h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 text-neon mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-xl sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-neon transition-colors">
                 {topic.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {topic.description}
               </p>
             </div>

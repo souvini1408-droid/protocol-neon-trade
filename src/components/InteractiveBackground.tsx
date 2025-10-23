@@ -61,7 +61,7 @@ export const InteractiveBackground = () => {
       const bodyHeight = Math.abs(candle.close - candle.open);
       const isGreen = candle.close > candle.open;
 
-      ctx.globalAlpha = 0.45;
+      ctx.globalAlpha = 0.25;
 
       // Draw wick (high to low)
       ctx.strokeStyle = isGreen ? "#ffffff" : "#000000";

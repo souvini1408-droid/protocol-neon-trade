@@ -44,14 +44,22 @@ export const TestimonialSection = () => {
                   const isFilled = i < Math.floor(testimonial.stars);
                   const isHalf = i === Math.floor(testimonial.stars) && testimonial.stars % 1 !== 0;
                   
+                  if (isHalf) {
+                    return (
+                      <div key={i} className="relative h-5 w-5">
+                        <Star className="h-5 w-5 text-neon absolute" />
+                        <Star 
+                          className="h-5 w-5 text-neon fill-neon absolute" 
+                          style={{ clipPath: 'inset(0 50% 0 0)' }}
+                        />
+                      </div>
+                    );
+                  }
+                  
                   return (
                     <Star 
                       key={i} 
                       className={`h-5 w-5 text-neon ${isFilled ? 'fill-neon' : ''}`}
-                      style={isHalf ? { 
-                        clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)',
-                        position: 'relative'
-                      } : {}}
                     />
                   );
                 })}

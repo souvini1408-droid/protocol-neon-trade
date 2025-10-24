@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const LeadCaptureSection = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name || !email) {
@@ -19,18 +21,44 @@ export const LeadCaptureSection = () => {
       });
       return;
     }
+
+    // Validação básica de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, insira um email válido",
+        variant: "destructive"
+      });
+      return;
+    }
     
-    // Envia email para protocolomente@gmail.com
-    const mailtoLink = `mailto:protocolomente@gmail.com?subject=Solicitação de Capítulo Gratuito&body=Nome: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0ASolicito o envio de 1 capítulo gratuito do ebook.`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
     
-    toast({
-      title: "Solicitação enviada!",
-      description: "Seu cliente de email foi aberto para enviar a solicitação"
-    });
-    
-    setName("");
-    setEmail("");
+    try {
+      const { data, error } = await supabase.functions.invoke('send-lead-email', {
+        body: { name, email }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Solicitação enviada! ✅",
+        description: "Verifique seu email para receber o capítulo gratuito"
+      });
+      
+      setName("");
+      setEmail("");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente em alguns instantes",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,8 +93,9 @@ export const LeadCaptureSection = () => {
             <Button
               type="submit"
               className="w-full bg-background text-neon hover:bg-background/90 font-bold text-lg py-6"
+              disabled={isSubmitting}
             >
-              📧 ENVIAR TRECHO GRATUITO
+              {isSubmitting ? "Enviando..." : "📧 ENVIAR TRECHO GRATUITO"}
             </Button>
           </form>
           

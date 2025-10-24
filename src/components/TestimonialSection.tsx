@@ -4,18 +4,21 @@ export const TestimonialSection = () => {
   const testimonials = [
     {
       name: "Rafael T.",
-      role: "Trader Independente",
-      text: "Depois que li, minha forma de operar mudou. Simples, direto e eficaz."
+      role: "Trader há 3 anos",
+      text: "Estava queimando minha conta todo mês por falta de disciplina. Depois de aplicar o protocolo gráfico, consegui manter 4 meses seguidos no positivo. O capítulo sobre gestão de risco me salvou uns R$ 8 mil fácil.",
+      stars: 5
     },
     {
       name: "Marina S.",
-      role: "Day Trader",
-      text: "Finalmente entendi o que estava fazendo errado. O protocolo mudou meu jogo completamente."
+      role: "Arquiteta, faz day trade nas horas vagas",
+      text: "Eu entrava em operações por impulso e sempre me ferrava. O livro me mostrou que eu ignorava sinais óbvios do gráfico. Agora espero meu setup acontecer. Mês passado fiz 12% de gain seguindo o protocolo.",
+      stars: 4
     },
     {
       name: "Carlos M.",
-      role: "Swing Trader",
-      text: "A parte sobre mentalidade valeu cada centavo. Agora opero com muito mais consistência."
+      role: "Ex-funcionário público, trader desde 2022",
+      text: "Comprei mais por curiosidade, mas quando li a parte sobre psicologia do trader, me identifiquei demais. Percebi que meu problema não era técnico, era emocional. Hoje consigo segurar loss sem entrar em revenge trade.",
+      stars: 4.5
     }
   ];
 
@@ -37,9 +40,21 @@ export const TestimonialSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-neon fill-neon" />
-                ))}
+                {[...Array(5)].map((_, i) => {
+                  const isFilled = i < Math.floor(testimonial.stars);
+                  const isHalf = i === Math.floor(testimonial.stars) && testimonial.stars % 1 !== 0;
+                  
+                  return (
+                    <Star 
+                      key={i} 
+                      className={`h-5 w-5 text-neon ${isFilled ? 'fill-neon' : ''}`}
+                      style={isHalf ? { 
+                        clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)',
+                        position: 'relative'
+                      } : {}}
+                    />
+                  );
+                })}
               </div>
               
               <p className="text-lg text-foreground mb-6 leading-relaxed italic">

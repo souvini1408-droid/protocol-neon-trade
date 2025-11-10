@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Check } from "lucide-react";
 import { CTAButton } from "./CTAButton";
 import { CountdownTimer } from "./CountdownTimer";
 
 export const PriceSection = () => {
+  const navigate = useNavigate();
+  
   const includes = [
     "Ebook completo em PDF",
     "Acesso imediato após pagamento",
@@ -12,7 +15,7 @@ export const PriceSection = () => {
   ];
 
   const handlePurchase = () => {
-    window.open("https://pay.hotmart.com/X102550943O", "_blank");
+    navigate("/video");
   };
 
   return (

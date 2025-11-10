@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CTAButton } from "./CTAButton";
 import { cn } from "@/lib/utils";
 
 export const FloatingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -19,7 +21,7 @@ export const FloatingCTA = () => {
   }, []);
 
   const handlePurchase = () => {
-    window.open("https://pay.hotmart.com/X102550943O", "_blank");
+    navigate("/video");
   };
 
   return (

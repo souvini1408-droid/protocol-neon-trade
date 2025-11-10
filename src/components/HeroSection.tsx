@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import ebookCover from "@/assets/ebook-cover-3d.jpg";
 import { CTAButton } from "./CTAButton";
 import { Interactive3DBook } from "./Interactive3DBook";
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
+  
   const handlePurchase = () => {
-    window.open("https://pay.hotmart.com/X102550943O", "_blank");
+    navigate("/video");
   };
 
   return (

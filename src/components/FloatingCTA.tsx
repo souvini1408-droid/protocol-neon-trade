@@ -32,7 +32,7 @@ export const FloatingCTA = () => {
       )}
     >
       <CTAButton onClick={handlePurchase} className="shadow-2xl">
-        📥 R$ 115,99
+        📥 R$ 113,90
       </CTAButton>
     </div>
   );

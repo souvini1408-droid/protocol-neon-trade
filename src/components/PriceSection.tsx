@@ -8,10 +8,10 @@ export const PriceSection = () => {
   
   const includes = [
     "Ebook completo em PDF",
+    "Vídeo aulas exclusivas",
+    "Sala de sinais VIP",
     "Acesso imediato após pagamento",
-    "Leitura em qualquer dispositivo",
-    "Atualizações gratuitas",
-    "Suporte via email"
+    "Atualizações gratuitas"
   ];
 
   const handlePurchase = () => {
@@ -43,7 +43,7 @@ export const PriceSection = () => {
               <span className="text-xl sm:text-2xl text-muted-foreground">Por apenas</span>
             </div>
             <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-neon mb-2">
-              R$ 115,99
+              R$ 113,90
             </div>
             <div className="inline-block bg-destructive/20 text-destructive px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-base sm:text-lg mb-3 sm:mb-4">
               61% DE DESCONTO
@@ -65,7 +65,7 @@ export const PriceSection = () => {
           </div>
           
           <CTAButton onClick={handlePurchase} className="w-full text-base sm:text-lg md:text-xl py-6 sm:py-7 md:py-8">
-            📥 GARANTIR DESCONTO – R$ 115,99
+            📥 GARANTIR DESCONTO – R$ 113,90
           </CTAButton>
           
           <p className="text-center text-sm text-muted-foreground mt-6">
